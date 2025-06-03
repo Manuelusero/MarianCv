@@ -1,0 +1,28 @@
+
+:root {
+    --primary-color: #efebeb;
+    --secondary-color: #000000;
+    --buttons-colors: #BCB8B6;
+    --font-colors: #ffffff;
+    --fonts-gral:"Magallanes";
+    --secondary-fonts: "Poppins";
+    
+   
+}
+@font-face {
+  font-family: 'Magallanes';
+  src: url('/fonts/Magallanes-Font/MagallanesMedium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* 🔥 ¡No más scroll lateral! */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--font-colors);
+}

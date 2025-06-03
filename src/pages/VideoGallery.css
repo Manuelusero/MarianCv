@@ -1,0 +1,38 @@
+.video-gallery {
+  padding: 20px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  margin-top: 150px;
+}
+
+.video-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.video-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.video-card {
+  flex: 0 0 auto;
+  width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

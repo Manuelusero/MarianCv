@@ -1,0 +1,217 @@
+/* ======== CONTAINER GENERAL ======== */
+.container {
+    display: flex;
+    justify-content: center; /* O 'flex-start' si querés alinear a la izquierda */
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;      /* Ancho total de la ventana */
+    height: 100vh;     /* Alto total de la ventana si querés pantalla completa */
+    margin: 0;
+    padding: 0;
+}
+
+/* ======== CONTENEDOR DE IMAGEN ======== */
+.img-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ======== IMAGEN DE PERFIL ======== */
+.img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== OVERLAY: texto arriba de la imagen ===== */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+/* === NOMBRE en la parte superior izquierda === */
+.titulo-superior {
+    margin-top: 5%; /* ajustá este valor para subir o bajar el texto */
+}
+
+.nombre {
+    font-size: 80px;
+    font-weight: 1;
+    font-family: var(--fonts-gral);
+    color: white;
+    margin-left: -30px;
+    letter-spacing: 0.80px;
+}
+
+.nombre span {
+    font-weight: 1000;
+    color: #fff;
+    letter-spacing: 0.80px;
+    font-family:var(--fonts-anga);
+    
+}
+
+/* === SUBTÍTULO en la parte inferior === */
+.titulo-inferior {
+    position: absolute;
+    bottom: 140px; /* ANTES: top: 60px; */
+    left: 0;   /* ANTES: left: 50% */
+    transform: none; /* Quitamos el centrado horizontal anterior */
+    background: rgba(20, 20, 20, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    color: white;
+    z-index: 999;
+    width: 100%; /* ahora se extiende de lado a lado */
+    height: 120px;
+    text-align: left;
+    margin-left: 0px;
+    font-family: var(--fonts-gral);
+
+}
+
+.profesion  {
+    margin-left: 18px;
+     font-family: var(--fonts-gral);
+     margin-top: 40px;
+}
+
+.mini {
+    margin-left: 18px;
+     font-family: var(--fonts-gral);
+}
+
+
+
+/* ======== RESPONSIVE DESIGN ======== */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .presentation {
+        align-items: center;
+    }
+
+    .titleh1,
+    .subtitle,
+    .description {
+        text-align: center;
+    }
+
+    .description {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .img-container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .circle-background {
+        width: 400px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .titleh1 {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .subtitle {
+        font-size: 36px;
+        line-height: 1.2;
+        /* margin-top: 0; */
+        margin-bottom: 5px;
+    }
+
+    .description {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .img1 {
+        width: 62%;
+        height: auto;
+        object-fit: cover;
+        position: relative;
+        z-index: 1;
+        margin-top: -12px;
+        margin-left: 0px;
+    }
+
+    .img-container {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 30px;
+    }
+
+    .circle-background {
+        width: 300px;
+        height: 230px;
+        margin-top: 30px;
+    }
+    .cv-button {
+        margin-top: 20px; /* Agregar espacio para que no lo tape la imagen */
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titleh1 {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+
+    .subtitle {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 20px;
+        width: 80%;
+    }
+
+    .cv-button {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+
+    .img1 {
+        width: 175px;
+        margin-top: 1px;
+    }
+
+    .img-container {
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+    }
+
+    .circle-background {
+        width: 240px;
+        height: 229px;
+        margin-top: 5px;
+    }
+}

@@ -1,0 +1,40 @@
+.media-experience-container {
+  color: black;
+  display: flex;
+  align-items: center; /* vertically center */
+  padding: 60px;
+  max-width: 1100px;
+  margin: 40px auto;
+  gap: 60px;
+  font-family: var(--fonts-gral);
+  
+}
+.medios{
+    font-weight: bold;
+}
+
+.media-experience-title {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.media-experience-title span {
+  font-weight: 700;
+}
+
+.media-experience-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.media-experience-list li {
+  margin-bottom: 14px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.media-experience-list li strong {
+  font-weight: 700;
+}
