@@ -1,91 +1,116 @@
-/* Wrapper general con padding superior */
 .about-wrapper {
-    padding-top: 200px;
-    max-width: 1240px;
-    margin: 0 auto;
+  padding-top: 200px;
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  /* Asegura que el padding no desborde */
+  overflow-x: hidden;
+  /* Evita scroll horizontal */
+
 }
 
-/* Contenedor en fila */
+/* FLEX ROW para escritorio */
 .about-container {
-    display: flex;
-    flex-direction: row; /* Ahora el contenido se alinea en fila */
-    align-items: flex-start;
-    gap: 40px; /* Espacio entre título y texto */
-
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  padding: 0 5%;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  /* Asegura que el padding no desborde */
+  min-width: 0;
 }
 
-/* Título */
+/* TÍTULO */
 .About {
-    font-family: var(--fonts-gral);
-    font-size: 64px;
-    font-weight: bold;
-    margin: 0;
-    color: var(--secondary-color);
-    width: 30%; /* ocupa el lado izquierdo */
+  font-family: var(--fonts-gral);
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: bold;
+  color: var(--secondary-color);
+  flex: 1;
+  min-width: 280px;
 }
 
-/* Parte 'MI' del título */
+/* "MI" parte */
 .mi {
-    font-weight: 100; /* mejor usar 100 en lugar de 0 */
-    font-size: 64px;
-    color: var(--secondary-color);
+  font-weight: 100;
+  color: var(--secondary-color);
 }
 
-/* Texto descriptivo */
+/* TEXTO */
 .about-container p {
-    font-family: var(--fonts-gral);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.8;
-    color: var(--secondary-color);
-    max-width: 70%;
-    margin-top: -55px;
-    margin-left: 200px;
+  font-family: var(--fonts-gral);
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--secondary-color);
+  flex: 2;
+  margin: 0;
+  width: 100%;
+  word-break: break-word;
+  min-width: 0;
+  /* Permite que el texto haga wrap y no se desborde */
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
-/* Responsividad */
+/* ========= TABLET ========= */
 @media (max-width: 1024px) {
-    .About {
-        font-size: 48px; /* Reduce en pantallas medianas */
-    }
+  .about-container {
+    flex-direction: column;
+    align-items: stretch;
+    /* ✅ que ocupe todo el ancho automáticamente */
+    padding-left: clamp(16px, 5vw, 32px);
+    /* ⬅ se adapta */
+    padding-right: clamp(16px, 5vw, 32px);
+    text-align: left;
+  }
 
-    .parent-container {
-        padding: 40px;
-    }
+  .About {
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
 
-    .parent-container p {
-        font-size: 18px;
-    }
+  .about-container p {
+    font-size: 18px;
+    width: 100%;
+  }
 }
 
+/* ========= MOBILE ========= */
 @media (max-width: 768px) {
-    .About {
-        font-size: 36px;
-        text-align: left;
-        margin-top: 30px;
-    }
+  .about-container {
+    align-items: center;
+    /* centrar todo */
+    text-align: center;
+    padding: 0 5%;
+  }
 
-    .parent-container {
-        padding: 30px;
-    }
+  .About {
+    text-align: center;
+    margin: 0 auto 20px auto;
+    font-size: clamp(24px, 6vw, 36px);
+  }
 
-    .parent-container p {
-        font-size: 16px;
-    }
+  .about-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    width: 100%;
+  }
 }
 
+/* ========= EXTRA SMALL ========= */
 @media (max-width: 480px) {
-    .About {
-        font-size: 28px;
-        text-align: left;
-        margin: 0, auto;
-    }
+  .About {
+    font-size: clamp(20px, 7vw, 28px);
+  }
 
-    .parent-container {
-        padding: 20px;
-    }
-
-    .parent-container p {
-        font-size: 14px;
-    }
+  .about-container p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }
