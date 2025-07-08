@@ -22,10 +22,13 @@
   display: flex;
   gap: 40px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  /* Evita que se apilen en pantallas pequeñas */
+  justify-content: space-between;
 }
 
-.followers, .age-range {
+.followers,
+.age-range {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -33,12 +36,13 @@
   margin-left: 70px;
 }
 
-.followers strong, .age-range strong {
+.followers strong,
+.age-range strong {
   font-size: 60px;
 }
 
-.numbers{
-    font-size: 40px;
+.numbers {
+  font-size: 40px;
 }
 
 
@@ -69,6 +73,7 @@
   margin-left: 20px;
   font-weight: 1;
 }
+
 .metrics-row {
   display: flex;
   justify-content: center;
@@ -76,11 +81,13 @@
   gap: 60px;
   margin-right: 40px;
 }
+
 .metric {
   min-width: 120px;
   text-align: center;
   margin-top: 15px;
 }
+
 .metric span {
   display: block;
   margin-bottom: 8px;
@@ -89,4 +96,213 @@
 
 .metric strong {
   font-size: 1.8rem;
+}
+
+@media (max-width: 1024px) {
+  .media-header h2 {
+    font-size: 48px;
+    margin-left: 40px;
+  }
+
+  .followers,
+  .age-range {
+    margin-left: 30px;
+  }
+
+  .followers strong,
+  .age-range strong {
+    font-size: 40px;
+  }
+
+  .numbers {
+    font-size: 28px;
+  }
+
+  .metrics-box {
+    width: 90vw;
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .last-metric {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+
+  .metrics-row {
+    gap: 30px;
+    margin-right: 0;
+  }
+
+  .media-top {
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .media-header h2 {
+    font-size: 32px;
+    margin-left: 10px;
+  }
+
+  .followers,
+  .age-range {
+    margin-left: 10px;
+    gap: 6px;
+  }
+
+  .followers strong,
+  .age-range strong {
+    font-size: 22px;
+  }
+
+  .numbers {
+    font-size: 14px;
+  }
+
+  .metrics-box {
+    width: 95vw;
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .last-metric {
+    font-size: 13px;
+    margin-left: 5px;
+  }
+
+  .metrics-row {
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-right: 0;
+  }
+
+  .metric {
+    min-width: 80px;
+    margin-top: 6px;
+  }
+
+  .metric strong {
+    font-size: 1.1rem;
+  }
+
+  .media-top {
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-reach {
+    padding: 10px 2px;
+    margin-top: 40px;
+  }
+
+  .media-header h2 {
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  .followers,
+  .age-range {
+    margin-left: 0;
+    gap: 2px;
+  }
+
+  .followers strong,
+  .age-range strong {
+    font-size: 12px;
+  }
+
+  .numbers {
+    font-size: 8px;
+  }
+
+  .metrics-box {
+    width: 99vw;
+    padding: 2px;
+    font-size: 0.7rem;
+    border-radius: 8px;
+  }
+
+  .last-metric {
+    font-size: 8px;
+    margin-left: 0;
+  }
+
+  .metrics-row {
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-right: 0;
+  }
+
+  .metric {
+    min-width: 60px;
+    margin-top: 4px;
+  }
+
+  .metric strong {
+    font-size: 0.8rem;
+  }
+
+  .media-top {
+    gap: 4px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* Ajuste para que el círculo de scroll to top no se corte */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    right: 10px !important;
+    bottom: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    right: 6px !important;
+    bottom: 6px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .media-header h2 {
+    font-size: 10px;
+  }
+
+  .followers strong,
+  .age-range strong {
+    font-size: 8px;
+  }
+
+  .numbers {
+    font-size: 6px;
+  }
+
+  .metrics-box {
+    font-size: 0.6rem;
+    border-radius: 5px;
+  }
+
+  .last-metric {
+    font-size: 6px;
+  }
+
+  .metrics-row {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .metric {
+    min-width: 40px;
+  }
+
+  .metric strong {
+    font-size: 0.6rem;
+  }
 }

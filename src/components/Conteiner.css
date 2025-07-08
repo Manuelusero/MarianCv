@@ -47,9 +47,9 @@
 /* === NOMBRE en la parte superior izquierda === */
 .titulo-superior {
     position: absolute;
-    top: 6.5%;
+    top: 26%;
     /* posición relativa a la altura de la pantalla */
-    left: 5%;
+    left: 4%;
     /* mantiene el desplazamiento a la izquierda */
 }
 
@@ -73,7 +73,7 @@
 /* === SUBTÍTULO en la parte inferior === */
 .titulo-inferior {
     position: absolute;
-    bottom: 140px;
+    bottom: 0px;
     left: 0;
     background: rgba(20, 20, 20, 0.3);
     backdrop-filter: blur(10px);
@@ -115,67 +115,121 @@
     .img1 {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        /* Cambiado de contain a cover para que la imagen llene el contenedor */
     }
 
+    /* Eliminar el ajuste de top en .titulo-superior para mantener la posición igual que en escritorio */
     .titulo-superior {
-        top: 6.5%;
-        left: 5%;
+        left: 4%;
+    }
+
+    .nombre {
+        font-size: clamp(24px, 5vw, 60px);
+        /* Achica la letra para que no tape la zona central */
     }
 
     .titulo-inferior {
-        bottom: 80px;
+        bottom: 0px;
         padding: 1rem 2rem;
-        height: auto;
-        font-size: 18px;
+        height: 120px;
+        font-size: clamp(16px, 2vw, 20px);
     }
 
     .profesion {
-        font-size: 17px;
-        margin-left: 10px;
-        margin-top: 30px;
+        font-size: clamp(15px, 1.5vw, 18px);
+        margin-left: 18px;
+        margin-top: 40px;
     }
 
     .mini {
-        font-size: 14px;
-        margin-left: 10px;
+        font-size: clamp(12px, 1vw, 16px);
+        margin-left: 18px;
     }
 }
 
 @media (max-width: 768px) {
+    .titulo-superior {
+        left: 4%;
+    }
+
+    .nombre {
+        font-size: clamp(18px, 5vw, 36px);
+        /* Más pequeño para pantallas medianas */
+    }
+
     .titulo-inferior {
-        bottom: 60px;
-        font-size: 14px;
-        padding: 0.5rem 1rem;
+        bottom: 0px;
+        font-size: clamp(14px, 2vw, 18px);
+        padding: 1rem 2rem;
+        height: 120px;
     }
 
     .profesion {
-        font-size: 14px;
-        margin-left: 0;
-        margin-top: 20px;
+        font-size: clamp(13px, 1.2vw, 16px);
+        margin-left: 18px;
+        margin-top: 40px;
     }
 
     .mini {
-        font-size: 12px;
-        margin-left: 0;
+        font-size: clamp(11px, 1vw, 14px);
+        margin-left: 18px;
     }
 }
 
 @media (max-width: 480px) {
+    .titulo-superior {
+        left: 4%;
+    }
+
     .nombre {
-        font-size: 28px;
+        font-size: clamp(14px, 7vw, 24px);
+        /* Más pequeño para pantallas pequeñas */
     }
 
     .titulo-inferior {
-        bottom: 30px;
-        font-size: 13px;
+        bottom: 0px;
+        font-size: clamp(12px, 2vw, 15px);
+        height: 100px;
+        padding: 0.8rem 1.2rem;
     }
 
     .profesion {
-        font-size: 13px;
+        font-size: clamp(11px, 1vw, 13px);
+        margin-left: 18px;
+        margin-top: 30px;
     }
 
     .mini {
-        font-size: 11px;
+        font-size: clamp(10px, 1vw, 12px);
+        margin-left: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    .titulo-superior {
+        left: 4%;
+    }
+
+    .nombre {
+        font-size: clamp(10px, 8vw, 18px);
+    }
+
+    .titulo-inferior {
+        bottom: 0px;
+        font-size: clamp(10px, 2vw, 13px);
+        height: 80px;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .profesion {
+        font-size: clamp(9px, 1vw, 11px);
+        margin-left: 10px;
+        margin-top: 18px;
+    }
+
+    .mini {
+        font-size: clamp(8px, 1vw, 10px);
+        margin-left: 10px;
     }
 }
